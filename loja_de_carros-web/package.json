@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:projeto": "next build && mkdir projeto && xcopy .next\\* projeto\\.next\\ /E /I /H /Y && xcopy public\\* projeto\\public\\ /E /I /H /Y && copy package.json projeto\\ && copy next.config.mjs projeto\\",
     "start": "next start",
     "lint": "next lint"
   },
