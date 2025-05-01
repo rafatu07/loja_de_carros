@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:projeto": "next build && mkdir projeto && xcopy .next\\* projeto\\.next\\ /E /I /H /Y && xcopy public\\* projeto\\public\\ /E /I /H /Y && mkdir projeto\\src && xcopy src\\* projeto\\src\\ /E /I /H /Y && copy package.json projeto\\ && copy next.config.mjs projeto\\ && copy postcss.config.js projeto\\ && copy tailwind.config.js projeto\\ && copy tsconfig.json projeto\\",
+    "build:projeto": "rm -r -force projeto 2>nul || true && next build && mkdir projeto && xcopy src\\app\\* projeto\\app\\ /E /I /H /Y && xcopy src\\components\\* projeto\\components\\ /E /I /H /Y && xcopy src\\hooks\\* projeto\\hooks\\ /E /I /H /Y && xcopy src\\data\\* projeto\\data\\ /E /I /H /Y && xcopy public\\* projeto\\public\\ /E /I /H /Y && xcopy .next\\* projeto\\.next\\ /E /I /H /Y && copy package.json projeto\\ && copy next.config.mjs projeto\\ && copy postcss.config.js projeto\\ && copy tailwind.config.js projeto\\ && copy tsconfig.json projeto\\",
     "start": "next start",
     "lint": "next lint"
   },
