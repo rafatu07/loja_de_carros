@@ -9,7 +9,7 @@ export default function HeroSection() {
   const [activeTab, setActiveTab] = useState('comprar');
 
   return (
-    <div className="relative h-screen w-full">
+    <div className="relative min-h-[80vh] w-full md:h-screen">
       {/* Imagem de fundo com efeito parallax */}
       <div className="absolute inset-0">
         <div className="relative h-full w-full overflow-hidden">
@@ -25,12 +25,12 @@ export default function HeroSection() {
       </div>
 
       {/* Conteúdo */}
-      <div className="relative z-10 flex h-full flex-col justify-center px-8 md:px-16 lg:w-[60%] text-left text-white">
+      <div className="relative z-10 flex h-full flex-col justify-center px-4 sm:px-8 md:px-16 lg:w-[60%] text-left text-white sm:mt-0 md:mt-0">
         <motion.h1 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-4 text-5xl font-bold tracking-tight md:text-7xl"
+          className="mb-4 text-3xl sm:text-4xl md:text-5xl md:mb-4 md:font-bold md:tracking-tight md:text-7xl"
         >
           Encontre o Veículo dos Seus Sonhos
         </motion.h1>
@@ -38,7 +38,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-12 max-w-2xl text-lg text-gray-200 md:text-xl"
+          className="mb-8 max-w-2xl text-base sm:text-lg md:text-xl md:mb-12 text-gray-200"
         >
           A maior seleção de carros e motos novos e usados com as melhores condições de pagamento
         </motion.p>
@@ -48,10 +48,10 @@ export default function HeroSection() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="w-min mb-8 justify-center items-center inline-flex rounded-full bg-white/10 p-1 backdrop-blur-sm"
+          className="w-min mb-6 sm:mb-8 md:mb-8 justify-center items-center inline-flex rounded-full bg-white/10 p-1 backdrop-blur-sm"
         >
           <button
-            className={`rounded-full px-8 py-3 text-lg transition-all duration-300 ${
+            className={`rounded-full px-4 sm:px-8 md:px-8 py-2 sm:py-3 md:py-3 text-base sm:text-lg md:text-lg transition-all duration-300 ${
               activeTab === 'comprar'
                 ? 'bg-blue-600 text-white shadow-lg'
                 : 'text-white hover:bg-white/20'
@@ -61,7 +61,7 @@ export default function HeroSection() {
             Comprar
           </button>
           <button
-            className={`rounded-full px-8 py-3 text-lg transition-all duration-300 ${
+            className={`rounded-full px-4 sm:px-8 md:px-8 py-2 sm:py-3 md:py-3 text-base sm:text-lg md:text-lg transition-all duration-300 ${
               activeTab === 'vender'
                 ? 'bg-blue-600 text-white shadow-lg'
                 : 'text-white hover:bg-white/20'
@@ -77,7 +77,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="w-full max-w-2xl rounded-2xl bg-white/10 p-6 backdrop-blur-md"
+          className="w-full max-w-2xl rounded-2xl bg-white/10 p-4 sm:p-6 md:p-6 backdrop-blur-md"
         >
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div className="relative">

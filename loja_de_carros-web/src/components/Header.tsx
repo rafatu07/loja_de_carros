@@ -12,7 +12,7 @@ const Header = () => {
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4">
         {/* Top Bar */}
-        <div className="flex justify-between items-center py-2 border-b">
+        <div className="hidden md:flex justify-between items-center py-2 border-b">
           <div className="flex items-center space-x-4">
             <span className="text-sm text-gray-600 flex items-center">
               <FaPhone className="mr-1" /> (11) 9999-9999
@@ -118,6 +118,21 @@ const Header = () => {
           {/* Mobile Menu */}
           {isMenuOpen && (
             <div className="md:hidden mt-4 space-y-4">
+              {/* Informações de contato e login/cadastro no mobile */}
+              <div className="flex flex-col space-y-2 border-b pb-2 mb-2">
+                <span className="text-sm text-gray-600 flex items-center">
+                  <FaPhone className="mr-1" /> (11) 9999-9999
+                </span>
+                <span className="text-sm text-gray-600 flex items-center">
+                  <FaEnvelope className="mr-1" /> contato@lojadecarros.com
+                </span>
+                <Link href="/" className="text-sm text-gray-600 hover:text-blue-600 flex items-center">
+                  <FaUser className="mr-1" /> Login
+                </Link>
+                <Link href="/" className="text-sm text-gray-600 hover:text-blue-600">
+                  Cadastro
+                </Link>
+              </div>
               <Link href="/" className="block text-gray-700 hover:text-blue-600">
                 Início
               </Link>
