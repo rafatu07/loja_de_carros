@@ -66,23 +66,23 @@ export default function SobrePage() {
                   <h2 className="text-2xl font-bold text-zinc-900 mb-4">Nossos Valores</h2>
                   <ul className="text-zinc-600 space-y-3">
                     <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
                       <span>Transparência em todas as negociações</span>
                     </li>
                     <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
                       <span>Compromisso com a satisfação do cliente</span>
                     </li>
                     <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
                       <span>Excelência no atendimento</span>
                     </li>
                     <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
                       <span>Responsabilidade social e ambiental</span>
                     </li>
                     <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
                       <span>Inovação constante</span>
                     </li>
                   </ul>

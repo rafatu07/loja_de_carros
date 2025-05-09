@@ -3,7 +3,7 @@ import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaFacebook, FaInstagram, FaTwitter
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-black text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Sobre */}
@@ -14,19 +14,19 @@ const Footer = () => {
               com as melhores condições de pagamento do mercado.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-gray-400 hover:text-red-600 transition-colors">
                 <FaFacebook className="text-xl" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-gray-400 hover:text-red-600 transition-colors">
                 <FaInstagram className="text-xl" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-gray-400 hover:text-red-600 transition-colors">
                 <FaTwitter className="text-xl" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-gray-400 hover:text-red-600 transition-colors">
                 <FaYoutube className="text-xl" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-gray-400 hover:text-red-600 transition-colors">
                 <FaLinkedin className="text-xl" />
               </a>
             </div>
@@ -37,32 +37,32 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Links Rápidos</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/" className="text-gray-400 hover:text-red-600 transition-colors">
                   Início
                 </Link>
               </li>
               <li>
-                <Link href="/estoque" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/estoque" className="text-gray-400 hover:text-red-600 transition-colors">
                   Estoque
                 </Link>
               </li>
               <li>
-                <Link href="/sobre" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/sobre" className="text-gray-400 hover:text-red-600 transition-colors">
                   Sobre
                 </Link>
               </li>
               <li>
-                <Link href="/contato" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/contato" className="text-gray-400 hover:text-red-600 transition-colors">
                   Contato
                 </Link>
               </li>
               <li>
-                <Link href="/vender-carro" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/vender-carro" className="text-gray-400 hover:text-red-600 transition-colors">
                   Vender Carro
                 </Link>
               </li>
               <li>
-                <Link href="/financiamento" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/financiamento" className="text-gray-400 hover:text-red-600 transition-colors">
                   Financiamento
                 </Link>
               </li>
@@ -74,15 +74,15 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Contato</h3>
             <ul className="space-y-2 text-gray-400">
               <li className="flex items-center">
-                <FaMapMarkerAlt className="mr-2" />
+                <FaMapMarkerAlt className="mr-2 text-red-600" />
                 Rua Exemplo, 123 - São Paulo, SP
               </li>
               <li className="flex items-center">
-                <FaPhone className="mr-2" />
+                <FaPhone className="mr-2 text-red-600" />
                 (11) 9999-9999
               </li>
               <li className="flex items-center">
-                <FaEnvelope className="mr-2" />
+                <FaEnvelope className="mr-2 text-red-600" />
                 contato@lojadecarros.com
               </li>
             </ul>
@@ -103,11 +103,11 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Seu e-mail"
-                className="px-4 py-2 rounded-md w-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="px-4 py-2 rounded-md w-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-500"
               />
               <button
                 type="submit"
-                className="bg-blue-600 px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
+                className="bg-red-600 px-4 py-2 rounded-md hover:bg-red-700 transition-colors"
               >
                 Enviar
               </button>
@@ -125,13 +125,13 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>Desenvolvido por <a href="https://www.rafaelturino.com.br/" className="text-gray-400 hover:text-white transition-colors">Rafael Turino</a> &copy; {new Date().getFullYear()} Loja de Carros. Todos os direitos reservados.</p>
+          <p>Desenvolvido por <a href="https://www.rafaelturino.com.br/" className="text-gray-400 hover:text-red-600 transition-colors">Rafael Turino</a> &copy; {new Date().getFullYear()} Loja de Carros. Todos os direitos reservados.</p>
           <div className="mt-2">
-            <Link href="/politica-privacidade" className="text-gray-400 hover:text-white transition-colors">
+            <Link href="/politica-privacidade" className="text-gray-400 hover:text-red-600 transition-colors">
               Política de Privacidade
             </Link>
             <span className="mx-2">|</span>
-            <Link href="/termos-uso" className="text-gray-400 hover:text-white transition-colors">
+            <Link href="/termos-uso" className="text-gray-400 hover:text-red-600 transition-colors">
               Termos de Uso
             </Link>
           </div>

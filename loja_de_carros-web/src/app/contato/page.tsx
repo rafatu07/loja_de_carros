@@ -79,7 +79,7 @@ export default function ContatoPage() {
                       name="nome"
                       value={formData.nome}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-red-500 focus:border-transparent"
                       required
                     />
                   </div>
@@ -93,7 +93,7 @@ export default function ContatoPage() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-red-500 focus:border-transparent"
                       required
                     />
                   </div>
@@ -108,7 +108,7 @@ export default function ContatoPage() {
                     name="telefone"
                     value={formData.telefone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-red-500 focus:border-transparent"
                   />
                 </div>
                 <div>
@@ -120,7 +120,7 @@ export default function ContatoPage() {
                     name="assunto"
                     value={formData.assunto}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-red-500 focus:border-transparent"
                     required
                   >
                     <option value="">Selecione um assunto</option>
@@ -140,13 +140,13 @@ export default function ContatoPage() {
                     value={formData.mensagem}
                     onChange={handleChange}
                     rows={4}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-red-500 focus:border-transparent"
                     required
                   ></textarea>
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-xl font-medium hover:bg-blue-700 transition-colors duration-300"
+                  className="w-full bg-red-600 text-white py-3 px-6 rounded-xl font-medium hover:bg-red-700 transition-colors duration-300"
                 >
                   Enviar Mensagem
                 </button>
@@ -180,8 +180,8 @@ export default function ContatoPage() {
                 <h2 className="text-2xl font-bold text-zinc-900 mb-6">Informações de Contato</h2>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                      <FaPhone className="text-blue-600 text-xl" />
+                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                      <FaPhone className="text-red-600 text-xl" />
                     </div>
                     <div>
                       <p className="text-sm text-zinc-500">Telefone</p>
@@ -189,8 +189,8 @@ export default function ContatoPage() {
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                      <FaWhatsapp className="text-blue-600 text-xl" />
+                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                      <FaWhatsapp className="text-red-600 text-xl" />
                     </div>
                     <div>
                       <p className="text-sm text-zinc-500">WhatsApp</p>
@@ -198,8 +198,8 @@ export default function ContatoPage() {
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                      <FaEnvelope className="text-blue-600 text-xl" />
+                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                      <FaEnvelope className="text-red-600 text-xl" />
                     </div>
                     <div>
                       <p className="text-sm text-zinc-500">E-mail</p>
@@ -207,8 +207,8 @@ export default function ContatoPage() {
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                      <FaMapMarkerAlt className="text-blue-600 text-xl" />
+                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                      <FaMapMarkerAlt className="text-red-600 text-xl" />
                     </div>
                     <div>
                       <p className="text-sm text-zinc-500">Endereço</p>
@@ -228,21 +228,21 @@ export default function ContatoPage() {
                 <div className="flex space-x-4">
                   <a
                     href="#"
-                    className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-200 transition-colors duration-300"
+                    className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center hover:bg-red-200 transition-colors duration-300"
                   >
-                    <FaInstagram className="text-blue-600 text-xl" />
+                    <FaInstagram className="text-red-600 text-xl" />
                   </a>
                   <a
                     href="#"
-                    className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-200 transition-colors duration-300"
+                    className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center hover:bg-red-200 transition-colors duration-300"
                   >
-                    <FaFacebookF className="text-blue-600 text-xl" />
+                    <FaFacebookF className="text-red-600 text-xl" />
                   </a>
                   <a
                     href="#"
-                    className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-200 transition-colors duration-300"
+                    className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center hover:bg-red-200 transition-colors duration-300"
                   >
-                    <FaWhatsapp className="text-blue-600 text-xl" />
+                    <FaWhatsapp className="text-red-600 text-xl" />
                   </a>
                 </div>
               </div>

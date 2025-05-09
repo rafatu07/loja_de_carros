@@ -59,7 +59,7 @@ const SearchFilters = () => {
               <button
                 type="button"
                 onClick={() => setShowAdvancedFilters(!showAdvancedFilters)}
-                className="text-blue-600 hover:text-blue-700 flex items-center justify-center gap-2"
+                className="text-red-600 hover:text-red-700 flex items-center justify-center gap-2"
               >
                 {showAdvancedFilters ? 'Ocultar Filtros' : 'Mostrar Filtros Avançados'}
                 <svg
@@ -133,7 +133,7 @@ const SearchFilters = () => {
             <div className="flex justify-center">
               <button
                 type="submit"
-                className="bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-colors"
+                className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 transition-colors"
               >
                 Buscar Carros
               </button>

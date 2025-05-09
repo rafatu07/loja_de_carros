@@ -33,7 +33,7 @@ export default function Estoque() {
           <button className="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 transition-colors">
             Anterior
           </button>
-          <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+          <button className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
             1
           </button>
           <button className="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 transition-colors">

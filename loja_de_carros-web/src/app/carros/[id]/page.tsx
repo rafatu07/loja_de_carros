@@ -39,7 +39,7 @@ export default function CarDetails({ params }: { params: { id: string } }) {
         >
           <button
             onClick={() => router.back()}
-            className="flex items-center text-gray-600 hover:text-blue-600 transition-colors group"
+            className="flex items-center text-gray-600 hover:text-red-600 transition-colors group"
           >
             <FaArrowLeft className="mr-2 group-hover:-translate-x-1 transition-transform" />
             <span>Voltar para listagem</span>
@@ -69,7 +69,7 @@ export default function CarDetails({ params }: { params: { id: string } }) {
                     <motion.div
                       key={index}
                       className={`relative h-24 rounded-lg overflow-hidden cursor-pointer ${
-                        selectedImage === index ? 'ring-2 ring-blue-600' : ''
+                        selectedImage === index ? 'ring-2 ring-red-600' : ''
                       }`}
                       whileHover={{ scale: 1.05 }}
                       onClick={() => setSelectedImage(index)}
@@ -90,7 +90,7 @@ export default function CarDetails({ params }: { params: { id: string } }) {
             <div className="space-y-6">
               <div>
                 <h1 className="text-3xl font-bold mb-2">{carData.name}</h1>
-                <p className="text-4xl font-bold text-blue-600">{carData.price}</p>
+                <p className="text-4xl font-bold text-red-600">{carData.price}</p>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
@@ -122,7 +122,7 @@ export default function CarDetails({ params }: { params: { id: string } }) {
                 <div className="grid grid-cols-2 gap-2">
                   {carData.features.map((feature, index) => (
                     <div key={index} className="flex items-center text-gray-600">
-                      <FaCheck className="mr-2 text-green-500" />
+                      <FaCheck className="mr-2 text-red-600" />
                       <span>{feature}</span>
                     </div>
                   ))}
@@ -141,7 +141,7 @@ export default function CarDetails({ params }: { params: { id: string } }) {
                 </motion.button>
 
                 <motion.button
-                  className="w-full bg-blue-600 text-white py-3 rounded-lg flex items-center justify-center space-x-2"
+                  className="w-full bg-red-600 text-white py-3 rounded-lg flex items-center justify-center space-x-2"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setIsContactOpen(true)}
@@ -172,7 +172,7 @@ export default function CarDetails({ params }: { params: { id: string } }) {
                   <label className="block text-gray-700 mb-2">Nome</label>
                   <input
                     type="text"
-                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
                     placeholder="Seu nome"
                   />
                 </div>
@@ -180,14 +180,14 @@ export default function CarDetails({ params }: { params: { id: string } }) {
                   <label className="block text-gray-700 mb-2">Telefone</label>
                   <input
                     type="tel"
-                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
                     placeholder="(11) 99999-9999"
                   />
                 </div>
                 <div>
                   <label className="block text-gray-700 mb-2">Mensagem</label>
                   <textarea
-                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
                     rows={4}
                     placeholder="Sua mensagem"
                   ></textarea>
@@ -195,7 +195,7 @@ export default function CarDetails({ params }: { params: { id: string } }) {
                 <div className="flex space-x-4">
                   <button
                     type="submit"
-                    className="flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700"
+                    className="flex-1 bg-red-600 text-white py-2 rounded-lg hover:bg-red-700"
                   >
                     Enviar
                   </button>

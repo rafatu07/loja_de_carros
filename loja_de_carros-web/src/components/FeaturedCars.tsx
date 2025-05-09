@@ -120,7 +120,7 @@ const imageVariants = {
 const buttonVariants = {
   hover: {
     scale: 1.05,
-    backgroundColor: "#1E40AF",
+    backgroundColor: "#C71818",
     transition: {
       duration: 0.2,
       ease: "easeOut"
@@ -164,14 +164,14 @@ export default function FeaturedCars() {
                       className="object-cover"
                     />
                   </motion.div>
-                  <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  <div className="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                     {car.year}
                   </div>
                 </div>
 
                 <div className="p-6">
                   <h3 className="text-lg font-semibold mb-2 line-clamp-2 h-14">{car.name}</h3>
-                  <p className="text-2xl font-bold text-blue-600 mb-4">{car.price}</p>
+                  <p className="text-2xl font-bold text-red-600 mb-4">{car.price}</p>
                   
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     <div className="flex items-center text-gray-600">
@@ -198,7 +198,7 @@ export default function FeaturedCars() {
                         variants={buttonVariants}
                         whileHover="hover"
                         whileTap="tap"
-                        className="w-full bg-blue-600 text-white py-2 rounded-lg text-center transition-colors"
+                        className="w-full bg-red-600 text-white py-2 rounded-lg text-center transition-colors"
                       >
                         Ver Detalhes
                       </motion.button>
@@ -207,7 +207,7 @@ export default function FeaturedCars() {
                       variants={buttonVariants}
                       whileHover="hover"
                       whileTap="tap"
-                      className="w-full bg-green-600 text-white py-2 rounded-lg text-center transition-colors"
+                      className="w-full bg-black text-white py-2 rounded-lg text-center transition-colors"
                     >
                       Agendar Test Drive
                     </motion.button>

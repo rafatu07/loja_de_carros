@@ -43,7 +43,7 @@ export default function ContactSection() {
               <div className="space-y-4">
                 <div className="flex items-start">
                   <svg
-                    className="mr-4 h-6 w-6 text-blue-600"
+                    className="mr-4 h-6 w-6 text-red-600"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -71,7 +71,7 @@ export default function ContactSection() {
 
                 <div className="flex items-start">
                   <svg
-                    className="mr-4 h-6 w-6 text-blue-600"
+                    className="mr-4 h-6 w-6 text-red-600"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -91,7 +91,7 @@ export default function ContactSection() {
 
                 <div className="flex items-start">
                   <svg
-                    className="mr-4 h-6 w-6 text-blue-600"
+                    className="mr-4 h-6 w-6 text-red-600"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -111,7 +111,7 @@ export default function ContactSection() {
 
                 <div className="flex items-start">
                   <svg
-                    className="mr-4 h-6 w-6 text-blue-600"
+                    className="mr-4 h-6 w-6 text-red-600"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -161,7 +161,7 @@ export default function ContactSection() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full rounded-md border border-gray-300 p-2 focus:border-blue-500 focus:outline-none"
+                    className="w-full rounded-md border border-gray-300 p-3 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500"
                     placeholder="Seu nome"
                     required
                   />
@@ -175,7 +175,7 @@ export default function ContactSection() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full rounded-md border border-gray-300 p-2 focus:border-blue-500 focus:outline-none"
+                    className="w-full rounded-md border border-gray-300 p-3 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500"
                     placeholder="seu@email.com"
                     required
                   />
@@ -189,7 +189,7 @@ export default function ContactSection() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full rounded-md border border-gray-300 p-2 focus:border-blue-500 focus:outline-none"
+                    className="w-full rounded-md border border-gray-300 p-3 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500"
                     placeholder="(11) 99999-9999"
                     required
                   />
@@ -202,7 +202,7 @@ export default function ContactSection() {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full rounded-md border border-gray-300 p-2 focus:border-blue-500 focus:outline-none"
+                    className="w-full rounded-md border border-gray-300 p-3 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500"
                     rows={4}
                     placeholder="Sua mensagem"
                     required
@@ -210,7 +210,7 @@ export default function ContactSection() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full rounded-full bg-blue-600 px-6 py-3 text-white transition hover:bg-blue-700"
+                  className="w-full rounded-full bg-red-600 px-6 py-3 text-white transition hover:bg-red-700"
                 >
                   Enviar Mensagem
                 </button>

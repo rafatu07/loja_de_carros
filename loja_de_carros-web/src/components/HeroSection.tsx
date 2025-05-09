@@ -53,7 +53,7 @@ export default function HeroSection() {
           <button
             className={`rounded-full px-4 sm:px-8 md:px-8 py-2 sm:py-3 md:py-3 text-base sm:text-lg md:text-lg transition-all duration-300 ${
               activeTab === 'comprar'
-                ? 'bg-blue-600 text-white shadow-lg'
+                ? 'bg-red-600 text-white shadow-lg'
                 : 'text-white hover:bg-white/20'
             }`}
             onClick={() => setActiveTab('comprar')}
@@ -63,7 +63,7 @@ export default function HeroSection() {
           <button
             className={`rounded-full px-4 sm:px-8 md:px-8 py-2 sm:py-3 md:py-3 text-base sm:text-lg md:text-lg transition-all duration-300 ${
               activeTab === 'vender'
-                ? 'bg-blue-600 text-white shadow-lg'
+                ? 'bg-red-600 text-white shadow-lg'
                 : 'text-white hover:bg-white/20'
             }`}
             onClick={() => setActiveTab('vender')}
@@ -85,7 +85,7 @@ export default function HeroSection() {
                 Condição
               </label>
               <div className="relative">
-                <select className="w-full appearance-none rounded-xl border border-white/20 bg-white/10 p-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20">
+                <select className="w-full appearance-none rounded-xl border border-white/20 bg-white/10 p-3 text-white placeholder-gray-400 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20">
                   <option value="">Todas</option>
                   <option value="novo">Novo</option>
                   <option value="usado">Usado</option>
@@ -99,7 +99,7 @@ export default function HeroSection() {
                 Marca
               </label>
               <div className="relative">
-                <select className="w-full appearance-none rounded-xl border border-white/20 bg-white/10 p-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20">
+                <select className="w-full appearance-none rounded-xl border border-white/20 bg-white/10 p-3 text-white placeholder-gray-400 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20">
                   <option value="">Todas as marcas</option>
                   <option value="jeep">Jeep</option>
                   <option value="toyota">Toyota</option>
@@ -114,7 +114,7 @@ export default function HeroSection() {
                 Modelo
               </label>
               <div className="relative">
-                <select className="w-full appearance-none rounded-xl border border-white/20 bg-white/10 p-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20">
+                <select className="w-full appearance-none rounded-xl border border-white/20 bg-white/10 p-3 text-white placeholder-gray-400 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20">
                   <option value="">Todos os modelos</option>
                 </select>
                 <FaChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-white/70" />
@@ -125,7 +125,7 @@ export default function HeroSection() {
                 Preço
               </label>
               <div className="relative">
-                <select className="w-full appearance-none rounded-xl border border-white/20 bg-white/10 p-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20">
+                <select className="w-full appearance-none rounded-xl border border-white/20 bg-white/10 p-3 text-white placeholder-gray-400 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20">
                   <option value="">Qualquer preço</option>
                   <option value="20000">Até R$ 20.000</option>
                   <option value="50000">R$ 20.000 - R$ 50.000</option>
@@ -137,7 +137,7 @@ export default function HeroSection() {
           </div>
           <button
             type="submit"
-            className="mt-6 flex w-full items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-lg font-medium text-white transition-all duration-300 hover:bg-blue-700 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-600/50"
+            className="mt-6 flex w-full items-center justify-center rounded-xl bg-red-600 px-8 py-4 text-lg font-medium text-white transition-all duration-300 hover:bg-red-700 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-red-600/50"
           >
             <FaSearch className="mr-2" />
             Buscar Veículos
