@@ -45,11 +45,11 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-900 text-white">
       <div className="container mx-auto px-4">
         <RevealOnScroll width="100%">
           <h2 className="text-3xl font-bold text-center mb-4">O que nossos clientes dizem</h2>
-          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
             Veja o que nossos clientes têm a dizer sobre sua experiência conosco
           </p>
         </RevealOnScroll>
@@ -71,7 +71,7 @@ export default function Testimonials() {
             >
               {testimonials.map((testimonial) => (
                 <SwiperSlide key={testimonial.id}>
-                  <div className="bg-white p-8 rounded-lg shadow-lg">
+                  <div className="bg-black p-8 rounded-lg shadow-lg border border-gray-800">
                     <div className="flex items-center mb-6">
                       <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
                         <img
@@ -81,16 +81,16 @@ export default function Testimonials() {
                         />
                       </div>
                       <div>
-                        <h3 className="text-xl font-semibold">{testimonial.name}</h3>
-                        <p className="text-gray-600">{testimonial.role}</p>
+                        <h3 className="text-xl font-semibold text-white">{testimonial.name}</h3>
+                        <p className="text-gray-400">{testimonial.role}</p>
                       </div>
                     </div>
                     <div className="flex mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <FaStar key={i} className="text-yellow-400" />
+                        <FaStar key={i} className="text-red-600" />
                       ))}
                     </div>
-                    <p className="text-gray-700 italic">"{testimonial.text}"</p>
+                    <p className="text-gray-300 italic">"{testimonial.text}"</p>
                   </div>
                 </SwiperSlide>
               ))}
@@ -102,10 +102,10 @@ export default function Testimonials() {
       <style jsx global>{`
         .testimonial-swiper .swiper-button-next,
         .testimonial-swiper .swiper-button-prev {
-          color: #3B82F6;
+          color: #E41D1D;
         }
         .testimonial-swiper .swiper-pagination-bullet-active {
-          background: #3B82F6;
+          background: #E41D1D;
         }
         .testimonial-swiper .swiper-pagination-bullet {
           background: #9CA3AF;

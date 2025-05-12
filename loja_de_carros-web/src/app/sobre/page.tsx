@@ -7,7 +7,7 @@ import { RevealOnScroll } from '@/components/RevealOnScroll';
 
 export default function SobrePage() {
   return (
-    <main>
+    <main className="bg-black text-white">
       {/* Hero Section */}
       <div className="relative h-[400px]">
         <Image
@@ -45,15 +45,15 @@ export default function SobrePage() {
       </div>
 
       {/* Conteúdo Principal */}
-      <div className="bg-gray-50">
+      <div className="bg-black">
         <div className="container mx-auto px-4 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Missão e Valores */}
             <div className="space-y-8">
               <RevealOnScroll width="100%">
-                <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all">
-                  <h2 className="text-2xl font-bold text-zinc-900 mb-4">Nossa Missão</h2>
-                  <p className="text-zinc-600">
+                <div className="bg-gray-900 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all border border-gray-800">
+                  <h2 className="text-2xl font-bold text-white mb-4">Nossa Missão</h2>
+                  <p className="text-gray-400">
                     Proporcionar a melhor experiência na compra e venda de veículos, 
                     com transparência, qualidade e excelência no atendimento, 
                     superando as expectativas dos nossos clientes.
@@ -62,9 +62,9 @@ export default function SobrePage() {
               </RevealOnScroll>
 
               <RevealOnScroll width="100%">
-                <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all">
-                  <h2 className="text-2xl font-bold text-zinc-900 mb-4">Nossos Valores</h2>
-                  <ul className="text-zinc-600 space-y-3">
+                <div className="bg-gray-900 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all border border-gray-800">
+                  <h2 className="text-2xl font-bold text-white mb-4">Nossos Valores</h2>
+                  <ul className="text-gray-400 space-y-3">
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
                       <span>Transparência em todas as negociações</span>
@@ -93,9 +93,9 @@ export default function SobrePage() {
             {/* História e Números */}
             <div className="space-y-8">
               <RevealOnScroll width="100%">
-                <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all">
-                  <h2 className="text-2xl font-bold text-zinc-900 mb-4">Nossa História</h2>
-                  <p className="text-zinc-600">
+                <div className="bg-gray-900 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all border border-gray-800">
+                  <h2 className="text-2xl font-bold text-white mb-4">Nossa História</h2>
+                  <p className="text-gray-400">
                     Desde 2010, somos referência no mercado automotivo, 
                     oferecendo os melhores veículos novos e seminovos. 
                     Nossa trajetória é marcada pela busca constante da excelência 
@@ -105,8 +105,8 @@ export default function SobrePage() {
               </RevealOnScroll>
 
               <RevealOnScroll width="100%">
-                <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all">
-                  <h2 className="text-2xl font-bold text-zinc-900 mb-6">Números que nos Orgulham</h2>
+                <div className="bg-gray-900 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all border border-gray-800">
+                  <h2 className="text-2xl font-bold text-white mb-6">Números que nos Orgulham</h2>
                   <div className="grid grid-cols-2 gap-6">
                     <AnimatedStat
                       end={5000}
@@ -135,12 +135,12 @@ export default function SobrePage() {
           {/* Equipe */}
           <div className="mt-16">
             <RevealOnScroll width="100%">
-              <h2 className="text-3xl font-bold text-zinc-900 text-center mb-12">Nossa Equipe</h2>
+              <h2 className="text-3xl font-bold text-white text-center mb-12">Nossa Equipe</h2>
             </RevealOnScroll>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <RevealOnScroll width="100%">
-                <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all text-center">
+                <div className="bg-gray-900 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all text-center border border-gray-800">
                   <div className="w-24 h-24 mx-auto mb-4 relative">
                     <Image
                       src="/images/diretor-comercial.jpeg"
@@ -150,13 +150,13 @@ export default function SobrePage() {
                       className="rounded-full object-cover"
                     />
                   </div>
-                  <h3 className="text-xl font-bold text-zinc-900">João Silva</h3>
-                  <p className="text-zinc-600">Diretor Comercial</p>
+                  <h3 className="text-xl font-bold text-white">João Silva</h3>
+                  <p className="text-gray-400">Diretor Comercial</p>
                 </div>
               </RevealOnScroll>
 
               <RevealOnScroll width="100%">
-                <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all text-center">
+                <div className="bg-gray-900 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all text-center border border-gray-800">
                   <div className="w-24 h-24 mx-auto mb-4 relative">
                     <Image
                       src="/images/gerente-vendas.jpeg"
@@ -166,13 +166,13 @@ export default function SobrePage() {
                       className="rounded-full object-cover"
                     />
                   </div>
-                  <h3 className="text-xl font-bold text-zinc-900">Maria Santos</h3>
-                  <p className="text-zinc-600">Gerente de Vendas</p>
+                  <h3 className="text-xl font-bold text-white">Maria Santos</h3>
+                  <p className="text-gray-400">Gerente de Vendas</p>
                 </div>
               </RevealOnScroll>
 
               <RevealOnScroll width="100%">
-                <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all text-center">
+                <div className="bg-gray-900 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all text-center border border-gray-800">
                   <div className="w-24 h-24 mx-auto mb-4 relative">
                     <Image
                       src="/images/consultor-tecnico.jpeg"
@@ -182,8 +182,8 @@ export default function SobrePage() {
                       className="rounded-full object-cover"
                     />
                   </div>
-                  <h3 className="text-xl font-bold text-zinc-900">Pedro Oliveira</h3>
-                  <p className="text-zinc-600">Consultor Técnico</p>
+                  <h3 className="text-xl font-bold text-white">Pedro Oliveira</h3>
+                  <p className="text-gray-400">Consultor Técnico</p>
                 </div>
               </RevealOnScroll>
             </div>

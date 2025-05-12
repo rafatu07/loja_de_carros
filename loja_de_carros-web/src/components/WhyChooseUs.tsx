@@ -43,12 +43,12 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <div className="py-20 bg-gray-50">
+    <div className="py-20 bg-black text-white">
       <div className="container mx-auto px-4">
         <RevealOnScroll width="100%">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl font-bold mb-6">Por que nos escolher?</h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-400">
               Oferecemos a melhor experiência na compra do seu veículo, com transparência,
               qualidade e atendimento personalizado
             </p>
@@ -58,11 +58,11 @@ export default function WhyChooseUs() {
           {features.map((feature, index) => (
             <RevealOnScroll key={index} width="100%">
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-red-100 text-red-600 rounded-full mb-6">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-red-900 text-red-500 rounded-full mb-6">
                   {feature.icon}
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                <h3 className="text-2xl font-bold mb-4 text-white">{feature.title}</h3>
+                <p className="text-gray-400 leading-relaxed">{feature.description}</p>
               </div>
             </RevealOnScroll>
           ))}

@@ -1,13 +1,10 @@
 'use client';
 
-import { useState } from 'react';
 import Image from 'next/image';
 import { FaSearch, FaChevronDown } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 export default function HeroSection() {
-  const [activeTab, setActiveTab] = useState('comprar');
-
   return (
     <div className="relative min-h-[80vh] w-full md:h-screen">
       {/* Imagem de fundo com efeito parallax */}
@@ -40,37 +37,8 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-8 max-w-2xl text-base sm:text-lg md:text-xl md:mb-12 text-gray-200"
         >
-          A maior seleção de carros e motos novos e usados com as melhores condições de pagamento
+          A maior seleção de carros e motos novos e usados com as melhores condições
         </motion.p>
-
-        {/* Tabs */}
-        <motion.div 
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="w-min mb-6 sm:mb-8 md:mb-8 justify-center items-center inline-flex rounded-full bg-white/10 p-1 backdrop-blur-sm"
-        >
-          <button
-            className={`rounded-full px-4 sm:px-8 md:px-8 py-2 sm:py-3 md:py-3 text-base sm:text-lg md:text-lg transition-all duration-300 ${
-              activeTab === 'comprar'
-                ? 'bg-red-600 text-white shadow-lg'
-                : 'text-white hover:bg-white/20'
-            }`}
-            onClick={() => setActiveTab('comprar')}
-          >
-            Comprar
-          </button>
-          <button
-            className={`rounded-full px-4 sm:px-8 md:px-8 py-2 sm:py-3 md:py-3 text-base sm:text-lg md:text-lg transition-all duration-300 ${
-              activeTab === 'vender'
-                ? 'bg-red-600 text-white shadow-lg'
-                : 'text-white hover:bg-white/20'
-            }`}
-            onClick={() => setActiveTab('vender')}
-          >
-            Vender
-          </button>
-        </motion.div>
 
         {/* Search Form */}
         <motion.form 

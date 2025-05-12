@@ -25,12 +25,12 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="py-16">
+    <section className="py-16 bg-black text-white">
       <div className="container mx-auto px-4">
         <RevealOnScroll width="100%">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold">Entre em Contato</h2>
-            <p className="text-gray-600">
+            <p className="text-gray-400">
               Estamos aqui para ajudar você a encontrar o carro perfeito
             </p>
           </div>
@@ -38,7 +38,7 @@ export default function ContactSection() {
 
         <div className="grid gap-8 md:grid-cols-2">
           <RevealOnScroll width="100%">
-            <div className="rounded-lg bg-white p-8 shadow-lg">
+            <div className="rounded-lg bg-gray-900 p-8 shadow-lg border border-gray-800">
               <h3 className="mb-6 text-xl font-semibold">Informações de Contato</h3>
               <div className="space-y-4">
                 <div className="flex items-start">
@@ -63,7 +63,7 @@ export default function ContactSection() {
                   </svg>
                   <div>
                     <h4 className="font-semibold">Endereço</h4>
-                    <p className="text-gray-600">
+                    <p className="text-gray-400">
                       Av. Paulista, 1000 - São Paulo, SP
                     </p>
                   </div>
@@ -85,7 +85,7 @@ export default function ContactSection() {
                   </svg>
                   <div>
                     <h4 className="font-semibold">Telefone</h4>
-                    <p className="text-gray-600">(11) 9999-9999</p>
+                    <p className="text-gray-400">(11) 9999-9999</p>
                   </div>
                 </div>
 
@@ -105,7 +105,7 @@ export default function ContactSection() {
                   </svg>
                   <div>
                     <h4 className="font-semibold">Email</h4>
-                    <p className="text-gray-600">contato@lojadecarros.com.br</p>
+                    <p className="text-gray-400">contato@lojadecarros.com.br</p>
                   </div>
                 </div>
 
@@ -125,7 +125,7 @@ export default function ContactSection() {
                   </svg>
                   <div>
                     <h4 className="font-semibold">Horário de Funcionamento</h4>
-                    <p className="text-gray-600">
+                    <p className="text-gray-400">
                       Segunda a Sexta: 09:00 - 18:00
                       <br />
                       Sábado: 09:00 - 14:00
@@ -149,11 +149,11 @@ export default function ContactSection() {
           </RevealOnScroll>
 
           <RevealOnScroll width="100%">
-            <div className="rounded-lg bg-white p-8 shadow-lg">
+            <div className="rounded-lg bg-gray-900 p-8 shadow-lg border border-gray-800">
               <h3 className="mb-6 text-xl font-semibold">Envie uma Mensagem</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="mb-1 block text-sm font-medium text-gray-700">
+                  <label className="mb-1 block text-sm font-medium text-gray-300">
                     Nome
                   </label>
                   <input
@@ -161,13 +161,13 @@ export default function ContactSection() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full rounded-md border border-gray-300 p-3 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500"
+                    className="w-full rounded-md border border-gray-700 p-3 bg-gray-800 text-white focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500"
                     placeholder="Seu nome"
                     required
                   />
                 </div>
                 <div>
-                  <label className="mb-1 block text-sm font-medium text-gray-700">
+                  <label className="mb-1 block text-sm font-medium text-gray-300">
                     Email
                   </label>
                   <input
@@ -175,13 +175,13 @@ export default function ContactSection() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full rounded-md border border-gray-300 p-3 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500"
+                    className="w-full rounded-md border border-gray-700 p-3 bg-gray-800 text-white focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500"
                     placeholder="seu@email.com"
                     required
                   />
                 </div>
                 <div>
-                  <label className="mb-1 block text-sm font-medium text-gray-700">
+                  <label className="mb-1 block text-sm font-medium text-gray-300">
                     Telefone
                   </label>
                   <input
@@ -189,20 +189,20 @@ export default function ContactSection() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full rounded-md border border-gray-300 p-3 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500"
+                    className="w-full rounded-md border border-gray-700 p-3 bg-gray-800 text-white focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500"
                     placeholder="(11) 99999-9999"
                     required
                   />
                 </div>
                 <div>
-                  <label className="mb-1 block text-sm font-medium text-gray-700">
+                  <label className="mb-1 block text-sm font-medium text-gray-300">
                     Mensagem
                   </label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full rounded-md border border-gray-300 p-3 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500"
+                    className="w-full rounded-md border border-gray-700 p-3 bg-gray-800 text-white focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500"
                     rows={4}
                     placeholder="Sua mensagem"
                     required

@@ -133,12 +133,12 @@ const buttonVariants = {
 
 export default function FeaturedCars() {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-black text-white">
       <div className="container mx-auto px-4">
         <RevealOnScroll width="100%">
           <h2 className="text-3xl font-bold text-center mb-4">Veículos em Destaque</h2>
-          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-            Confira nossa seleção de carros e motos com as melhores condições de pagamento
+          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+            Confira nossa seleção de carros e motos disponíveis em nosso estoque
           </p>
         </RevealOnScroll>
 
@@ -146,7 +146,7 @@ export default function FeaturedCars() {
           {cars.map((car) => (
             <RevealOnScroll key={car.id} width="100%">
               <motion.div
-                className="bg-white rounded-xl shadow-lg overflow-hidden"
+                className="bg-gray-900 rounded-xl shadow-lg overflow-hidden border border-gray-800"
                 variants={cardVariants}
                 whileHover="hover"
                 initial="initial"
@@ -170,23 +170,23 @@ export default function FeaturedCars() {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-lg font-semibold mb-2 line-clamp-2 h-14">{car.name}</h3>
+                  <h3 className="text-lg font-semibold mb-2 line-clamp-2 h-14 text-white">{car.name}</h3>
                   <p className="text-2xl font-bold text-red-600 mb-4">{car.price}</p>
                   
                   <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div className="flex items-center text-gray-600">
+                    <div className="flex items-center text-gray-400">
                       <FaTachometerAlt className="mr-2" />
                       <span className="text-sm">{car.mileage}</span>
                     </div>
-                    <div className="flex items-center text-gray-600">
+                    <div className="flex items-center text-gray-400">
                       <FaCog className="mr-2" />
                       <span className="text-sm">{car.transmission}</span>
                     </div>
-                    <div className="flex items-center text-gray-600">
+                    <div className="flex items-center text-gray-400">
                       <FaGasPump className="mr-2" />
                       <span className="text-sm">{car.fuel}</span>
                     </div>
-                    <div className="flex items-center text-gray-600">
+                    <div className="flex items-center text-gray-400">
                       <FaInfoCircle className="mr-2" />
                       <span className="text-sm">{car.features.length} itens</span>
                     </div>
@@ -203,14 +203,6 @@ export default function FeaturedCars() {
                         Ver Detalhes
                       </motion.button>
                     </Link>
-                    <motion.button
-                      variants={buttonVariants}
-                      whileHover="hover"
-                      whileTap="tap"
-                      className="w-full bg-black text-white py-2 rounded-lg text-center transition-colors"
-                    >
-                      Agendar Test Drive
-                    </motion.button>
                   </div>
                 </div>
               </motion.div>

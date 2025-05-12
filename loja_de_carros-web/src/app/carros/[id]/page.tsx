@@ -4,12 +4,11 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { FaGasPump, FaTachometerAlt, FaCog, FaCalendar, FaCheck, FaWhatsapp, FaPhone, FaArrowLeft } from 'react-icons/fa';
+import { FaGasPump, FaTachometerAlt, FaCog, FaCalendar, FaCheck, FaWhatsapp, FaArrowLeft } from 'react-icons/fa';
 import { cars } from '@/data/cars';
 
 export default function CarDetails({ params }: { params: { id: string } }) {
   const [selectedImage, setSelectedImage] = useState(0);
-  const [isContactOpen, setIsContactOpen] = useState(false);
   const router = useRouter();
 
   // Encontra o carro com base no ID da URL
@@ -129,7 +128,7 @@ export default function CarDetails({ params }: { params: { id: string } }) {
                 </div>
               </div>
 
-              <div className="space-y-3">
+              <div>
                 <motion.button
                   className="w-full bg-green-600 text-white py-3 rounded-lg flex items-center justify-center space-x-2"
                   whileHover={{ scale: 1.02 }}
@@ -139,78 +138,10 @@ export default function CarDetails({ params }: { params: { id: string } }) {
                   <FaWhatsapp className="text-xl" />
                   <span>Conversar pelo WhatsApp</span>
                 </motion.button>
-
-                <motion.button
-                  className="w-full bg-red-600 text-white py-3 rounded-lg flex items-center justify-center space-x-2"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => setIsContactOpen(true)}
-                >
-                  <FaPhone className="text-xl" />
-                  <span>Solicitar Contato</span>
-                </motion.button>
               </div>
             </div>
           </div>
         </motion.div>
-
-        {/* Modal de Contato */}
-        {isContactOpen && (
-          <motion.div
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-          >
-            <motion.div
-              className="bg-white rounded-xl p-8 max-w-md w-full"
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-            >
-              <h2 className="text-2xl font-bold mb-4">Solicitar Contato</h2>
-              <form className="space-y-4">
-                <div>
-                  <label className="block text-gray-700 mb-2">Nome</label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
-                    placeholder="Seu nome"
-                  />
-                </div>
-                <div>
-                  <label className="block text-gray-700 mb-2">Telefone</label>
-                  <input
-                    type="tel"
-                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
-                    placeholder="(11) 99999-9999"
-                  />
-                </div>
-                <div>
-                  <label className="block text-gray-700 mb-2">Mensagem</label>
-                  <textarea
-                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
-                    rows={4}
-                    placeholder="Sua mensagem"
-                  ></textarea>
-                </div>
-                <div className="flex space-x-4">
-                  <button
-                    type="submit"
-                    className="flex-1 bg-red-600 text-white py-2 rounded-lg hover:bg-red-700"
-                  >
-                    Enviar
-                  </button>
-                  <button
-                    type="button"
-                    className="flex-1 bg-gray-200 text-gray-800 py-2 rounded-lg hover:bg-gray-300"
-                    onClick={() => setIsContactOpen(false)}
-                  >
-                    Cancelar
-                  </button>
-                </div>
-              </form>
-            </motion.div>
-          </motion.div>
-        )}
       </div>
     </div>
   );

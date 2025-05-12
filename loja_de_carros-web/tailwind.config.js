@@ -23,6 +23,9 @@ module.exports = {
         blue: {
           600: '#E41D1D',
           700: '#C71818',
+        },
+        secondary: {
+          DEFAULT: '#000000',
         }
       },
       fontFamily: {
