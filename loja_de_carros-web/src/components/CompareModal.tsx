@@ -57,7 +57,7 @@ export const CompareModal: React.FC<CompareModalProps> = ({ open, onClose }) => 
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80">
       <div 
         ref={modalRef}
-        className="relative bg-black border border-gray-800 rounded-xl shadow-2xl w-full max-w-6xl mx-4 p-8"
+        className="relative bg-black border border-gray-800 rounded-xl shadow-2xl w-full max-w-6xl mx-4 p-8 max-h-[90vh] overflow-y-auto"
       >
         <button
           className="absolute top-4 right-4 text-gray-400 hover:text-red-600 text-2xl"
@@ -67,7 +67,9 @@ export const CompareModal: React.FC<CompareModalProps> = ({ open, onClose }) => 
           <FaTimes />
         </button>
         <h2 className="text-3xl font-bold text-white mb-8">COMPARAR CARROS</h2>
-        <div className="grid grid-cols-3 gap-8 mb-8">
+        
+        {/* Cards dos carros - empilha no mobile */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 mb-8">
           {compareCars.map((car, idx) => (
             <div key={idx} className="flex flex-col items-center relative">
               {car ? (
@@ -137,55 +139,148 @@ export const CompareModal: React.FC<CompareModalProps> = ({ open, onClose }) => 
           ))}
         </div>
 
-        {/* Nova tabela de comparação - cada coluna representa um veículo */}
+        {/* Tabela de comparação responsiva */}
         <div className="border-t border-gray-800 pt-6">
-          <div className="grid grid-cols-4 gap-4 mb-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
             <div className="text-gray-400 text-sm font-semibold">CARACTERÍSTICAS</div>
-            {compareCars.map((_, idx) => (
-              <div key={idx} className="text-gray-400 text-sm"></div>
-            ))}
+            <div className="hidden md:block text-gray-400 text-sm"></div>
+            <div className="hidden md:block text-gray-400 text-sm"></div>
+            <div className="hidden md:block text-gray-400 text-sm"></div>
           </div>
 
-          <div className="grid grid-cols-4 gap-4 mb-4">
-            <div className="text-gray-400 text-sm font-semibold">MARCA</div>
-            {compareCars.map((car, idx) => (
-              <div key={idx} className="text-white text-sm">{car ? car.brand : '-'}</div>
-            ))}
-          </div>
+          <div className="space-y-4">
+            {/* Cada seção da tabela */}
+            <div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-2">
+                <div className="text-gray-400 text-sm font-semibold">MARCA</div>
+                {compareCars.map((car, idx) => (
+                  <div key={idx} className={`text-white text-sm ${idx > 0 ? 'hidden md:block' : ''}`}>
+                    {car ? car.brand : '-'}
+                  </div>
+                ))}
+              </div>
+              
+              {/* Cards mobile para características - só aparecem em mobile */}
+              <div className="md:hidden">
+                {compareCars.slice(1).map((car, idx) => (
+                  car && (
+                    <div key={idx} className="bg-gray-800 p-2 rounded mb-2">
+                      <div className="flex justify-between">
+                        <span className="text-gray-400 text-xs">MARCA:</span>
+                        <span className="text-white text-xs">{car.brand}</span>
+                      </div>
+                    </div>
+                  )
+                ))}
+              </div>
+            </div>
 
-          <div className="grid grid-cols-4 gap-4 mb-4">
-            <div className="text-gray-400 text-sm font-semibold">MODELO</div>
-            {compareCars.map((car, idx) => (
-              <div key={idx} className="text-white text-sm">{car ? car.model : '-'}</div>
-            ))}
-          </div>
+            <div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-2">
+                <div className="text-gray-400 text-sm font-semibold">MODELO</div>
+                {compareCars.map((car, idx) => (
+                  <div key={idx} className={`text-white text-sm ${idx > 0 ? 'hidden md:block' : ''}`}>
+                    {car ? car.model : '-'}
+                  </div>
+                ))}
+              </div>
+              
+              <div className="md:hidden">
+                {compareCars.slice(1).map((car, idx) => (
+                  car && (
+                    <div key={idx} className="bg-gray-800 p-2 rounded mb-2">
+                      <div className="flex justify-between">
+                        <span className="text-gray-400 text-xs">MODELO:</span>
+                        <span className="text-white text-xs">{car.model}</span>
+                      </div>
+                    </div>
+                  )
+                ))}
+              </div>
+            </div>
 
-          <div className="grid grid-cols-4 gap-4 mb-4">
-            <div className="text-gray-400 text-sm font-semibold">ANO</div>
-            {compareCars.map((car, idx) => (
-              <div key={idx} className="text-white text-sm">{car ? car.year : '-'}</div>
-            ))}
-          </div>
+            <div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-2">
+                <div className="text-gray-400 text-sm font-semibold">ANO</div>
+                {compareCars.map((car, idx) => (
+                  <div key={idx} className={`text-white text-sm ${idx > 0 ? 'hidden md:block' : ''}`}>
+                    {car ? car.year : '-'}
+                  </div>
+                ))}
+              </div>
+              
+              <div className="md:hidden">
+                {compareCars.slice(1).map((car, idx) => (
+                  car && (
+                    <div key={idx} className="bg-gray-800 p-2 rounded mb-2">
+                      <div className="flex justify-between">
+                        <span className="text-gray-400 text-xs">ANO:</span>
+                        <span className="text-white text-xs">{car.year}</span>
+                      </div>
+                    </div>
+                  )
+                ))}
+              </div>
+            </div>
 
-          <div className="grid grid-cols-4 gap-4 mb-4">
-            <div className="text-gray-400 text-sm font-semibold">STATUS</div>
-            {compareCars.map((car, idx) => (
-              <div key={idx} className="text-white text-sm">{car ? car.status : '-'}</div>
-            ))}
-          </div>
+            <div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-2">
+                <div className="text-gray-400 text-sm font-semibold">STATUS</div>
+                {compareCars.map((car, idx) => (
+                  <div key={idx} className={`text-white text-sm ${idx > 0 ? 'hidden md:block' : ''}`}>
+                    {car ? car.status : '-'}
+                  </div>
+                ))}
+              </div>
+              
+              <div className="md:hidden">
+                {compareCars.slice(1).map((car, idx) => (
+                  car && (
+                    <div key={idx} className="bg-gray-800 p-2 rounded mb-2">
+                      <div className="flex justify-between">
+                        <span className="text-gray-400 text-xs">STATUS:</span>
+                        <span className="text-white text-xs">{car.status || '-'}</span>
+                      </div>
+                    </div>
+                  )
+                ))}
+              </div>
+            </div>
 
-          <div className="grid grid-cols-4 gap-4 mb-4">
-            <div className="text-gray-400 text-sm font-semibold">COR</div>
-            {compareCars.map((car, idx) => (
-              <div key={idx} className="text-white text-sm">{car ? car.color : '-'}</div>
-            ))}
-          </div>
+            <div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-2">
+                <div className="text-gray-400 text-sm font-semibold">COR</div>
+                {compareCars.map((car, idx) => (
+                  <div key={idx} className={`text-white text-sm ${idx > 0 ? 'hidden md:block' : ''}`}>
+                    {car ? car.color : '-'}
+                  </div>
+                ))}
+              </div>
+              
+              <div className="md:hidden">
+                {compareCars.slice(1).map((car, idx) => (
+                  car && (
+                    <div key={idx} className="bg-gray-800 p-2 rounded mb-2">
+                      <div className="flex justify-between">
+                        <span className="text-gray-400 text-xs">COR:</span>
+                        <span className="text-white text-xs">{car.color}</span>
+                      </div>
+                    </div>
+                  )
+                ))}
+              </div>
+            </div>
 
-          <div className="grid grid-cols-4 gap-4">
-            <div className="text-gray-400 text-sm font-semibold">CARACTERÍSTICAS ADICIONAIS</div>
-            {compareCars.map((car, idx) => (
-              <div key={idx} className="text-white text-sm">{car ? 'Ver detalhes' : '-'}</div>
-            ))}
+            <div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="text-gray-400 text-sm font-semibold">CARACTERÍSTICAS ADICIONAIS</div>
+                {compareCars.map((car, idx) => (
+                  <div key={idx} className={`text-white text-sm ${idx > 0 ? 'hidden md:block' : ''}`}>
+                    {car ? 'Ver detalhes' : '-'}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

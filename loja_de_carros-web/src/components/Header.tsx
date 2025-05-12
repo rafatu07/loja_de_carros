@@ -147,6 +147,14 @@ const HeaderContent = () => {
                 Contato
               </Link>
               <div className="flex items-center space-x-4">
+                <button 
+                  onClick={() => setCompareOpen(true)}
+                  className="text-red-600 hover:text-red-400 flex items-center"
+                  title="Comparar veículos"
+                >
+                  <FaBalanceScale className="text-xl mr-2" />
+                  <span className="font-semibold">Comparar</span>
+                </button>
                 <button className="text-white hover:text-red-600">
                   <FaSearch className="text-xl" />
                 </button>
