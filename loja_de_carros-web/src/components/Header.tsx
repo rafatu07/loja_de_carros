@@ -2,11 +2,13 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { FaPhone, FaEnvelope, FaUser, FaSearch, FaShoppingCart, FaCar } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaUser, FaSearch, FaShoppingCart, FaCar, FaBalanceScale } from 'react-icons/fa';
+import { CompareModal } from './CompareModal';
 
-const Header = () => {
+const HeaderContent = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [compareOpen, setCompareOpen] = useState(false);
 
   return (
     <header className="bg-black text-white shadow-md sticky top-0 z-50">
@@ -52,6 +54,14 @@ const Header = () => {
               <Link href="/contato" className="text-white hover:text-red-600 transition-colors">
                 Contato
               </Link>
+              <button
+                onClick={() => setCompareOpen(true)}
+                className="text-red-600 hover:text-red-300 transition-colors flex items-center relative"
+                title="Comparar veículos"
+              >
+                <FaBalanceScale className="text-xl mr-1" />
+                <span className="text-sm font-semibold ">Comparar</span>
+              </button>
               <button 
                 onClick={() => setSearchOpen(!searchOpen)}
                 className="text-white hover:text-red-600 transition-colors"
@@ -145,8 +155,10 @@ const Header = () => {
           )}
         </nav>
       </div>
+      <CompareModal open={compareOpen} onClose={() => setCompareOpen(false)} />
     </header>
   );
 };
 
+const Header = HeaderContent;
 export default Header; 

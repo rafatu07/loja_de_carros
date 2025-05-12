@@ -5,97 +5,8 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaGasPump, FaTachometerAlt, FaCog, FaInfoCircle } from 'react-icons/fa';
 import { RevealOnScroll } from './RevealOnScroll';
-
-const cars = [
-  {
-    id: 1,
-    name: 'Jeep Renegade Longitude T270 1.3 Turbo',
-    price: 'R$ 139.900',
-    year: 2023,
-    mileage: '15.000 km',
-    transmission: 'Automático',
-    fuel: 'Flex',
-    image: '/cars/Jeep Renegade Longitude T270 1.3 Turbo 2023/perfil.jpg',
-    features: ['4x4', 'Teto Solar', 'Multimídia', 'Câmera de Ré']
-  },
-  {
-    id: 2,
-    name: 'Toyota Corolla XEi 2.0',
-    price: 'R$ 129.900',
-    year: 2022,
-    mileage: '20.000 km',
-    transmission: 'Automático',
-    fuel: 'Flex',
-    image: '/cars/Toyota Corolla XEi 2.0 2022/perfil.jpeg',
-    features: ['Multimídia', 'Câmera de Ré', 'Sensor de Estacionamento', 'Piloto Automático']
-  },
-  {
-    id: 3,
-    name: 'Chevrolet Onix LTZ 1.0 Turbo',
-    price: 'R$ 79.900',
-    year: 2021,
-    mileage: '30.000 km',
-    transmission: 'Automático',
-    fuel: 'Flex',
-    image: '/cars/Chevrolet Onix LTZ 1.0 Turbo 2021/perfil.jpg',
-    features: ['Multimídia', 'Câmera de Ré', 'Sensor de Estacionamento', 'Ar Digital']
-  },
-  {
-    id: 4,
-    name: 'Hyundai HB20S Comfort Plus 1.6',
-    price: 'R$ 69.900',
-    year: 2021,
-    mileage: '35.000 km',
-    transmission: 'Manual',
-    fuel: 'Flex',
-    image: '/cars/Hyundai HB20S Comfort Plus 1.6 2021/perfil.jpeg',
-    features: ['Multimídia', 'Câmera de Ré', 'Ar Digital', 'Vidros Elétricos']
-  },
-  {
-    id: 5,
-    name: 'Fiat Strada Volcano 1.3',
-    price: 'R$ 89.900',
-    year: 2022,
-    mileage: '25.000 km',
-    transmission: 'Manual',
-    fuel: 'Flex',
-    image: '/cars/Fiat Strada Volcano 1.3 2022/perfil.jpeg',
-    features: ['Multimídia', 'Câmera de Ré', 'Ar Digital', 'Vidros Elétricos']
-  },
-  {
-    id: 6,
-    name: 'Volkswagen Gol 1.6 MSI',
-    price: 'R$ 59.900',
-    year: 2020,
-    mileage: '40.000 km',
-    transmission: 'Manual',
-    fuel: 'Flex',
-    image: '/cars/Volkswagen Gol 1.6 MSI 2020/perfil.jpg',
-    features: ['Multimídia', 'Ar Digital', 'Vidros Elétricos', 'Trava Elétrica']
-  },
-  {
-    id: 7,
-    name: 'Honda CG 160 Titan',
-    price: 'R$ 12.900',
-    year: 2022,
-    mileage: '5.000 km',
-    transmission: 'Manual',
-    fuel: 'Flex',
-    image: '/cars/Honda CG 160 Titan 2022/perfil.jpg',
-    features: ['Injeção Eletrônica', 'Partida Elétrica', 'Freio a Disco', 'Painel Digital']
-  },
-  {
-    id: 8,
-    name: 'Yamaha Fazer 250 ABS',
-    price: 'R$ 19.900',
-    year: 2023,
-    mileage: '3.000 km',
-    transmission: 'Manual',
-    fuel: 'Flex',
-    image: '/cars/Yamaha Fazer 250 ABS 2023/perfil.jpg',
-    features: ['ABS', 'Injeção Eletrônica', 'Partida Elétrica', 'Painel Digital']
-  }
-];
+import { useCompare, Car as CompareCar } from './CompareContext';
+import { cars } from '@/data/cars';
 
 const cardVariants = {
   hover: {
@@ -132,6 +43,10 @@ const buttonVariants = {
 };
 
 export default function FeaturedCars() {
+  const { cars: compareCars, addCar, removeCar } = useCompare();
+
+  const isInCompare = (id: number) => compareCars.some((c) => c && c.id === id);
+
   return (
     <section className="py-16 bg-black text-white">
       <div className="container mx-auto px-4">
@@ -157,7 +72,7 @@ export default function FeaturedCars() {
                     variants={imageVariants}
                   >
                     <Image
-                      src={car.image}
+                      src={car.images[0]}
                       alt={car.name}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
