@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { RevealOnScroll } from './RevealOnScroll';
-import '../styles/slider.css';
 
 const SearchFilters = () => {
   const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);

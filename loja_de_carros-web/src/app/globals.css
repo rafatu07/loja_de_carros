@@ -1,3 +1,4 @@
+@import '../styles/slider.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
