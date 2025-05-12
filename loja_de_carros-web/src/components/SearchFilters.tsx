@@ -10,14 +10,14 @@ const SearchFilters = () => {
   const maxPriceRef = useRef(null);
   const rangeRef = useRef(null);
 
-  const handleMinChange = (e) => {
+  const handleMinChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newMinVal = parseInt(e.target.value);
     if (newMinVal < priceRange[1]) {
       setPriceRange([newMinVal, priceRange[1]]);
     }
   };
 
-  const handleMaxChange = (e) => {
+  const handleMaxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newMaxVal = parseInt(e.target.value);
     if (newMaxVal > priceRange[0]) {
       setPriceRange([priceRange[0], newMaxVal]);
