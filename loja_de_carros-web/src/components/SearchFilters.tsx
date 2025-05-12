@@ -2,6 +2,8 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { RevealOnScroll } from './RevealOnScroll';
+import Slider from 'rc-slider';
+import 'rc-slider/assets/index.css';
 
 const SearchFilters = () => {
   const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);
@@ -87,38 +89,19 @@ const SearchFilters = () => {
                   <span>R${priceRange[0]}</span>
                   <span>R${priceRange[1].toLocaleString('pt-BR')}</span>
                 </div>
-                
-                <div className="range-slider">
-                  <div className="track"></div>
-                  <input 
-                    type="range" 
-                    min="181" 
-                    max="700000" 
-                    value={priceRange[0]} 
-                    onChange={handleMinChange}
-                    className="range-min"
-                    ref={minPriceRef}
-                  />
-                  <input 
-                    type="range" 
-                    min="181" 
-                    max="700000" 
-                    value={priceRange[1]} 
-                    onChange={handleMaxChange}
-                    className="range-max"
-                    ref={maxPriceRef}
-                  />
-                  
-                  <div 
-                    className="thumb thumb-min" 
-                    style={{ left: `${((priceRange[0] - 181) / (700000 - 181)) * 100}%` }}
-                  ></div>
-                  
-                  <div 
-                    className="thumb thumb-max" 
-                    style={{ left: `${((priceRange[1] - 181) / (700000 - 181)) * 100}%` }}
-                  ></div>
-                </div>
+                <Slider
+                  range
+                  min={181}
+                  max={700000}
+                  value={priceRange}
+                  onChange={(value) => setPriceRange(value as [number, number])}
+                  trackStyle={[{ backgroundColor: '#e41d1d' }]}
+                  handleStyle={[
+                    { borderColor: '#e41d1d', backgroundColor: '#1f2937' },
+                    { borderColor: '#e41d1d', backgroundColor: '#1f2937' }
+                  ]}
+                  railStyle={{ backgroundColor: '#4b5563' }}
+                />
               </div>
             </div>
 
