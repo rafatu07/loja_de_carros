@@ -27,7 +27,7 @@ export default function CarDetails({ params }: { params: { id: string } }) {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-black py-12">
       <div className="container mx-auto px-4">
         {/* Botão Voltar */}
         <motion.div
@@ -38,7 +38,7 @@ export default function CarDetails({ params }: { params: { id: string } }) {
         >
           <button
             onClick={() => router.back()}
-            className="flex items-center text-gray-600 hover:text-red-600 transition-colors group"
+            className="flex items-center text-gray-300 hover:text-red-600 transition-colors group"
           >
             <FaArrowLeft className="mr-2 group-hover:-translate-x-1 transition-transform" />
             <span>Voltar para listagem</span>
@@ -46,7 +46,7 @@ export default function CarDetails({ params }: { params: { id: string } }) {
         </motion.div>
 
         <motion.div 
-          className="bg-white rounded-xl shadow-lg overflow-hidden"
+          className="bg-gray-900 rounded-xl shadow-lg overflow-hidden border border-gray-800"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -88,39 +88,39 @@ export default function CarDetails({ params }: { params: { id: string } }) {
             {/* Informações do Veículo */}
             <div className="space-y-6">
               <div>
-                <h1 className="text-3xl font-bold mb-2">{carData.name}</h1>
+                <h1 className="text-3xl font-bold mb-2 text-white">{carData.name}</h1>
                 <p className="text-4xl font-bold text-red-600">{carData.price}</p>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
-                <div className="flex items-center text-gray-600">
+                <div className="flex items-center text-gray-300">
                   <FaCalendar className="mr-2" />
                   <span>Ano: {carData.year}</span>
                 </div>
-                <div className="flex items-center text-gray-600">
+                <div className="flex items-center text-gray-300">
                   <FaTachometerAlt className="mr-2" />
                   <span>KM: {carData.mileage}</span>
                 </div>
-                <div className="flex items-center text-gray-600">
+                <div className="flex items-center text-gray-300">
                   <FaCog className="mr-2" />
                   <span>Câmbio: {carData.transmission}</span>
                 </div>
-                <div className="flex items-center text-gray-600">
+                <div className="flex items-center text-gray-300">
                   <FaGasPump className="mr-2" />
                   <span>Combustível: {carData.fuel}</span>
                 </div>
               </div>
 
               <div>
-                <h2 className="text-xl font-semibold mb-3">Descrição</h2>
-                <p className="text-gray-600">{carData.description}</p>
+                <h2 className="text-xl font-semibold mb-3 text-white">Descrição</h2>
+                <p className="text-gray-300">{carData.description}</p>
               </div>
 
               <div>
-                <h2 className="text-xl font-semibold mb-3">Características</h2>
+                <h2 className="text-xl font-semibold mb-3 text-white">Características</h2>
                 <div className="grid grid-cols-2 gap-2">
                   {carData.features.map((feature, index) => (
-                    <div key={index} className="flex items-center text-gray-600">
+                    <div key={index} className="flex items-center text-gray-300">
                       <FaCheck className="mr-2 text-red-600" />
                       <span>{feature}</span>
                     </div>
