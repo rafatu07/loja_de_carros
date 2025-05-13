@@ -3,8 +3,39 @@
 import Image from 'next/image';
 import { FaSearch, FaChevronDown } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { Listbox } from '@headlessui/react';
+import { Fragment, useState } from 'react';
 
 export default function HeroSection() {
+  const condicoes = [
+    { value: '', label: 'Todas' },
+    { value: 'novo', label: 'Novo' },
+    { value: 'usado', label: 'Usado' },
+    { value: 'seminovo', label: 'Seminovo' },
+  ];
+  const [condicao, setCondicao] = useState(condicoes[0]);
+
+  const marcas = [
+    { value: '', label: 'Todas as marcas' },
+    { value: 'jeep', label: 'Jeep' },
+    { value: 'toyota', label: 'Toyota' },
+    { value: 'chevrolet', label: 'Chevrolet' },
+    { value: 'hyundai', label: 'Hyundai' },
+  ];
+  const modelos = [
+    { value: '', label: 'Todos os modelos' },
+    // Adicione mais modelos conforme necessário
+  ];
+  const precos = [
+    { value: '', label: 'Qualquer preço' },
+    { value: '20000', label: 'Até R$ 20.000' },
+    { value: '50000', label: 'R$ 20.000 - R$ 50.000' },
+    { value: '100000', label: 'R$ 50.000 - R$ 100.000' },
+  ];
+  const [marca, setMarca] = useState(marcas[0]);
+  const [modelo, setModelo] = useState(modelos[0]);
+  const [preco, setPreco] = useState(precos[0]);
+
   return (
     <div className="relative min-h-[80vh] w-full md:h-screen">
       {/* Imagem de fundo com efeito parallax */}
@@ -53,13 +84,33 @@ export default function HeroSection() {
                 Condição
               </label>
               <div className="relative">
-                <select className="w-full appearance-none rounded-xl border border-white/20 bg-white/10 p-3 text-white placeholder-gray-400 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20">
-                  <option value="">Todas</option>
-                  <option value="novo">Novo</option>
-                  <option value="usado">Usado</option>
-                  <option value="seminovo">Seminovo</option>
-                </select>
-                <FaChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-white/70" />
+                <Listbox value={condicao} onChange={setCondicao}>
+                  <div className="relative">
+                    <Listbox.Button className="w-full appearance-none rounded-xl border border-red-600 bg-black p-3 text-white text-left focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-600 flex justify-between items-center">
+                      <span>{condicao.label}</span>
+                      <FaChevronDown className="ml-2 text-white/70" />
+                    </Listbox.Button>
+                    <Listbox.Options className="absolute z-10 mt-1 w-full rounded-xl bg-black shadow-lg ring-1 ring-red-600 focus:outline-none">
+                      {condicoes.map((option) => (
+                        <Listbox.Option
+                          key={option.value}
+                          value={option}
+                          as={Fragment}
+                        >
+                          {({ active, selected }) => (
+                            <li
+                              className={`cursor-pointer select-none p-3 text-white rounded-xl transition-colors ${
+                                selected ? 'bg-red-600 text-white' : active ? 'bg-red-900 text-white' : ''
+                              }`}
+                            >
+                              {option.label}
+                            </li>
+                          )}
+                        </Listbox.Option>
+                      ))}
+                    </Listbox.Options>
+                  </div>
+                </Listbox>
               </div>
             </div>
             <div className="relative">
@@ -67,14 +118,33 @@ export default function HeroSection() {
                 Marca
               </label>
               <div className="relative">
-                <select className="w-full appearance-none rounded-xl border border-white/20 bg-white/10 p-3 text-white placeholder-gray-400 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20">
-                  <option value="">Todas as marcas</option>
-                  <option value="jeep">Jeep</option>
-                  <option value="toyota">Toyota</option>
-                  <option value="chevrolet">Chevrolet</option>
-                  <option value="hyundai">Hyundai</option>
-                </select>
-                <FaChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-white/70" />
+                <Listbox value={marca} onChange={setMarca}>
+                  <div className="relative">
+                    <Listbox.Button className="w-full appearance-none rounded-xl border border-red-600 bg-black p-3 text-white text-left focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-600 flex justify-between items-center">
+                      <span>{marca.label}</span>
+                      <FaChevronDown className="ml-2 text-white/70" />
+                    </Listbox.Button>
+                    <Listbox.Options className="absolute z-10 mt-1 w-full rounded-xl bg-black shadow-lg ring-1 ring-red-600 focus:outline-none">
+                      {marcas.map((option) => (
+                        <Listbox.Option
+                          key={option.value}
+                          value={option}
+                          as={Fragment}
+                        >
+                          {({ active, selected }) => (
+                            <li
+                              className={`cursor-pointer select-none p-3 text-white rounded-xl transition-colors ${
+                                selected ? 'bg-red-600 text-white' : active ? 'bg-red-900 text-white' : ''
+                              }`}
+                            >
+                              {option.label}
+                            </li>
+                          )}
+                        </Listbox.Option>
+                      ))}
+                    </Listbox.Options>
+                  </div>
+                </Listbox>
               </div>
             </div>
             <div className="relative">
@@ -82,10 +152,33 @@ export default function HeroSection() {
                 Modelo
               </label>
               <div className="relative">
-                <select className="w-full appearance-none rounded-xl border border-white/20 bg-white/10 p-3 text-white placeholder-gray-400 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20">
-                  <option value="">Todos os modelos</option>
-                </select>
-                <FaChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-white/70" />
+                <Listbox value={modelo} onChange={setModelo}>
+                  <div className="relative">
+                    <Listbox.Button className="w-full appearance-none rounded-xl border border-red-600 bg-black p-3 text-white text-left focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-600 flex justify-between items-center">
+                      <span>{modelo.label}</span>
+                      <FaChevronDown className="ml-2 text-white/70" />
+                    </Listbox.Button>
+                    <Listbox.Options className="absolute z-10 mt-1 w-full rounded-xl bg-black shadow-lg ring-1 ring-red-600 focus:outline-none">
+                      {modelos.map((option) => (
+                        <Listbox.Option
+                          key={option.value}
+                          value={option}
+                          as={Fragment}
+                        >
+                          {({ active, selected }) => (
+                            <li
+                              className={`cursor-pointer select-none p-3 text-white rounded-xl transition-colors ${
+                                selected ? 'bg-red-600 text-white' : active ? 'bg-red-900 text-white' : ''
+                              }`}
+                            >
+                              {option.label}
+                            </li>
+                          )}
+                        </Listbox.Option>
+                      ))}
+                    </Listbox.Options>
+                  </div>
+                </Listbox>
               </div>
             </div>
             <div className="relative">
@@ -93,13 +186,33 @@ export default function HeroSection() {
                 Preço
               </label>
               <div className="relative">
-                <select className="w-full appearance-none rounded-xl border border-white/20 bg-white/10 p-3 text-white placeholder-gray-400 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20">
-                  <option value="">Qualquer preço</option>
-                  <option value="20000">Até R$ 20.000</option>
-                  <option value="50000">R$ 20.000 - R$ 50.000</option>
-                  <option value="100000">R$ 50.000 - R$ 100.000</option>
-                </select>
-                <FaChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-white/70" />
+                <Listbox value={preco} onChange={setPreco}>
+                  <div className="relative">
+                    <Listbox.Button className="w-full appearance-none rounded-xl border border-red-600 bg-black p-3 text-white text-left focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-600 flex justify-between items-center">
+                      <span>{preco.label}</span>
+                      <FaChevronDown className="ml-2 text-white/70" />
+                    </Listbox.Button>
+                    <Listbox.Options className="absolute z-10 mt-1 w-full rounded-xl bg-black shadow-lg ring-1 ring-red-600 focus:outline-none">
+                      {precos.map((option) => (
+                        <Listbox.Option
+                          key={option.value}
+                          value={option}
+                          as={Fragment}
+                        >
+                          {({ active, selected }) => (
+                            <li
+                              className={`cursor-pointer select-none p-3 text-white rounded-xl transition-colors ${
+                                selected ? 'bg-red-600 text-white' : active ? 'bg-red-900 text-white' : ''
+                              }`}
+                            >
+                              {option.label}
+                            </li>
+                          )}
+                        </Listbox.Option>
+                      ))}
+                    </Listbox.Options>
+                  </div>
+                </Listbox>
               </div>
             </div>
           </div>
