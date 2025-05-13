@@ -125,7 +125,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>Desenvolvido por <a href="https://www.rafaelturino.com.br/" className="text-gray-400 hover:text-red-600 transition-colors">Rafael Turino</a> &copy; {new Date().getFullYear()} Loja de Carros. Todos os direitos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Loja de Carros. Todos os direitos reservados.</p>
           <div className="mt-2">
             <Link href="/politica-privacidade" className="text-gray-400 hover:text-red-600 transition-colors">
               Política de Privacidade
